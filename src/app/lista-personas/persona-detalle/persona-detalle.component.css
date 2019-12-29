@@ -1,0 +1,9 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+select, input {
+    padding: 5px;
+    margin-top: 10px;
+    font-family: inherit;
+  }
+  
+  input[type='submit'] {
+    width: 300px;}

@@ -1,0 +1,63 @@
+<mat-card>
+<mat-card-title>
+        <mat-icon>person_outline</mat-icon>
+        Fichas de personas
+    </mat-card-title>
+
+        <mat-card-content>
+        <mat-nav-list>
+            <mat-list-item>
+                <span class="custom_bold">Nombre&nbsp;</span>
+                <span class="fill_remaining_space"> </span>
+                <span class="custom_bold">&nbsp;Apellido&nbsp;</span>
+                <span class="fill_remaining_space"> </span>
+                <span class="custom_bold">&nbsp;&nbsp;&nbsp;Edad&nbsp;&nbsp;</span>
+                <span class="fill_remaining_space"> </span>
+                <span class="custom_bold">&nbsp;&nbsp;&nbsp;DNI&nbsp;&nbsp;&nbsp;</span>
+                <span class="fill_remaining_space"> </span>
+                <span class="custom_bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cumpleaños&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="fill_remaining_space"> </span>
+                <span class="custom_bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;colorFavorito&nbsp;</span>
+                <span class="fill_remaining_space"> </span>
+                <span class="custom_bold">&nbsp;&nbsp;&nbsp;&nbsp;Sexo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="fill_remaining_space"> </span>
+                <span class="custom_bold">&nbsp;&nbsp;&nbsp;Notas&nbsp;&nbsp;&nbsp;</span>
+                <span class="fill_remaining_space"> </span>
+                <span class="custom_bold">&nbsp;&nbsp;&nbsp;Acción&nbsp; </span>
+            </mat-list-item>
+            <mat-list-item *ngFor="let persona of agenda.listaPersonas(); let i=index">
+
+                <span>{{persona.getNombre()+" - "}}</span>
+                <span class="fill_remaining_space"> </span>
+                <span>{{" - "+persona.getApellido()+" - "}}</span>
+                <span class="fill_remaining_space"> </span>
+                <span>{{" - "+persona.getEdad()+" - "}}</span>
+                <span class="fill_remaining_space"> </span>
+                <span>{{" - "+persona.getDNI()+" - "}}</span>
+                <span class="fill_remaining_space"> </span>
+                <span>{{" - "+persona.getCumpleanyos()+" - "}}</span>
+                <span class="fill_remaining_space"> </span>
+                <span>{{" - "+persona.getColorFavorito()+" - "}}</span>
+                <span class="fill_remaining_space"> </span>
+                <span>{{" - "+persona.getSexo()+" - "}}</span>
+                <span class="fill_remaining_space"> </span>
+                <span>{{" - "+persona.getNotas()+" - "}}</span>
+                <span class="fill_remaining_space"> </span>
+                
+                <button mat-icon-button (click)="borrar(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button (click)="seleccionar.emit(i)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                
+                           
+            </mat-list-item>
+        </mat-nav-list>
+        
+
+    </mat-card-content>
+    
+</mat-card>
+
+

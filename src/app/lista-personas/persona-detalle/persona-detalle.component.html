@@ -1,0 +1,35 @@
+<div *ngIf="personaSeleccionada">
+      
+<form [formGroup]="formularioEdicion" (ngSubmit)="submit(formularioEdicion.value)">
+<br/><br/>
+<h3>FORMULARIO</h3>
+<div>
+<!-- validamos que nombre, apellido y colorFavorito tenga un mínimo de 3 caracteres, y que dni tenga 
+  9 caracteres, así como que la edad esté comprendida entre 0 y 125 y que el sexo se 
+  seleccione de un desplegable con las opciones  Hombre, Mujer, Otro y No especificado-->
+
+Nombre : <input placeholder="NOMBRE" matInput type="text" minlength="3" formControlName="nombre" required><br/><br/>
+Apellido : <input placeholder="APELLIDO" matInput type="text" minlength="3" formControlName="apellido" required><br/><br/>
+Edad :<input placeholder="EDAD" matInput type="number" min="0" max="125" formControlName="edad" required><br/><br/>
+ Dni : <input placeholder="DNI" matInput id="dni" type="text" minlength="9" maxlength="9" formControlName="dni" required><br/><br/> 
+ <!--Cumpleaños : <input placeholder="CUMPLEAÑOS" matInput id="cumpleanyos" type="text" formControlName="cumpleanyos" required><br/><br/>-->
+
+Color Favorito : 
+<input placeholder="COLOR FAVORITO" matInput type="text" formControlName="colorFavorito"><br/><br/>
+Sexo : 
+  <mat-button-toggle-group name="sexo" formControlName="sexo"> 
+  <mat-button-toggle value="sexo no especificado">sexo no especificado</mat-button-toggle><br/>
+  <mat-button-toggle value="mujer">mujer</mat-button-toggle><br/>
+  <mat-button-toggle value="hombre">hombre</mat-button-toggle><br/>
+  <mat-button-toggle value="otro">otro</mat-button-toggle>
+</mat-button-toggle-group><br/><br/>
+Notas : <input placeholder="NOTAS" matInput type="text" formControlName="notas"><br/> <br/><br/>
+
+</div>
+<br/>
+
+<button class="button" type="submit.emit" [disabled]="formGroup.formularioEdicion.invalid">GUARDAR CAMBIOS</button><br/><br/>
+
+<button  (click)="volver.emit()">VOLVER AL INICIO</button><br/>
+</form>
+</div>

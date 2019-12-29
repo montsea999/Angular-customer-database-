@@ -1,0 +1,9 @@
+    <span>{{ title }} app is running!</span><br/><br/>
+
+    <button (click)="add()">AÑADE UNA PERSONA</button>
+
+<app-lista-personas  *ngIf="!personaSeleccionada" (seleccionar)="seleccionar($event)"></app-lista-personas>
+<app-persona-detalle *ngIf="personaSeleccionada" (volver)="volver($event)" [personaSeleccionada]="personaSeleccionada" [indice]="indice">
+
+</app-persona-detalle>
+
